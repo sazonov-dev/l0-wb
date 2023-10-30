@@ -1,0 +1,11 @@
+@use 'mixins' as *;
+
+.header__search {
+  max-width: 970px;
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 36px;
+  background: rgba(255, 255, 255, 0.20);
+  @include flex-center;
+  gap: 8px;
+}

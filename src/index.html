@@ -8,6 +8,28 @@
     <title>Товары и точка</title>
 </head>
 <body class="body">
-
+    <header class="header">
+        <div class="body__container header__container">
+            <div class="header__nav">
+                <div class="burger"></div>
+                <h2 class="header__nav-logo">Товары и точка</h2>
+            </div>
+            <div class="header__search">
+                <input class="header__search-input" type="text" placeholder="Я ищу..." value="">
+                <button class="header__search-btn"></button>
+            </div>
+            <div class="header__cabinet">
+                <div class="header__cabinet-content">
+                    <img class="header__cabinet-content-img" src="<%=require('./images/header/profile.svg')%>" alt="Иконка профиля">
+                    <span class="header__cabinet-content-info">Профиль</span>
+                </div>
+                <div class="header__cabinet-content basket">
+                    <span class="basket__counter">3</span>
+                    <img class="header__cabinet-content-img" src="<%=require('./images/header/basket.svg')%>" alt="Иконка корзины">
+                    <span class="header__cabinet-content-info">Корзина</span>
+                </div>
+            </div>
+        </div>
+    </header>
 </body>
 </html>

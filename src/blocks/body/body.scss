@@ -1,8 +1,14 @@
-.body {
+@use 'variables' as *;
+
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.body {
   font-family: 'SegoeUI', Arial, sans-serif;
   font-size: 16px;
-  color: #000;
+  font-weight: 400;
+  color: $system-black;
 }

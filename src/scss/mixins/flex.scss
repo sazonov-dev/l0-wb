@@ -9,8 +9,18 @@
   justify-content: center;
 }
 
+@mixin flex-between {
+  @include flex-center;
+  justify-content: space-between;
+}
+
 @mixin flex-center-column {
   @include flex-center;
+  flex-direction: column;
+}
+
+@mixin flex-between-column {
+  @include flex-between;
   flex-direction: column;
 }
 

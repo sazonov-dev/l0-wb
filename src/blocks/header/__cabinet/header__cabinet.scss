@@ -1,0 +1,6 @@
+@use 'mixins' as *;
+
+.header__cabinet {
+  @include flex-between;
+  gap: 40px;
+}

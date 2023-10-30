@@ -1,3 +1,24 @@
  @use '../vendor/normalize.css';
  @use '../fonts/fonts';
  @use '../blocks/body/body';
+ @use '../blocks/body/__container/body__container';
+
+ @use '../blocks/header/header';
+ @use '../blocks/header/__container/header__container';
+ @use '../blocks/header/__nav/header__nav';
+ @use '../blocks/header/__nav-logo/header__nav-logo';
+ @use '../blocks/header/__search/header__search';
+ @use '../blocks/header/__search-input/header__search-input';
+ @use '../blocks/header/__search-btn/header__search-btn';
+ @use '../blocks/header/__cabinet/header__cabinet';
+ @use '../blocks/header/__cabinet-content/header__cabinet-content';
+ @use '../blocks/header/__cabinet-content-img/header__cabinet-content-img';
+ @use '../blocks/header/__cabinet-content-info/header__cabinet-content-info';
+
+ @use '../blocks/basket/basket';
+ @use '../blocks/basket/__counter/basket__counter';
+
+
+
+
+ @use '../blocks/burger/burger';

@@ -1,0 +1,6 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.header {
+  background-color: $system-violet;
+}

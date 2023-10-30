@@ -1,0 +1,12 @@
+@use 'variables' as *;
+
+.header__nav-logo {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 2.74px;
+  font-variant: all-small-caps;
+  min-width: 106px;
+  color: $system-white;
+  margin-bottom: auto;
+}

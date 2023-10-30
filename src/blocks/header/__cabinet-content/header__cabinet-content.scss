@@ -1,0 +1,9 @@
+@use 'mixins' as *;
+
+.header__cabinet-content {
+  @include flex-center-column;
+  gap: 7px;
+  max-width: 56px;
+  min-height: 56px;
+  cursor: pointer;
+}
