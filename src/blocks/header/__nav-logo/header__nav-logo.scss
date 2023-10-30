@@ -9,4 +9,10 @@
   min-width: 106px;
   color: $system-white;
   margin-bottom: auto;
+
+  @media screen and (min-width: 320px) and (max-width: 1023px) {
+    min-width: 198px;
+    letter-spacing: 1.8px;
+    text-align: center;
+  }
 }

@@ -1,0 +1,15 @@
+.header__nav-btn-mobile {
+  display: none;
+  all: unset;
+  cursor: pointer;
+  background-image: url('../../../images/header/loop-mobile.svg');
+  object-fit: cover;
+  background-repeat: no-repeat;
+  width: 28px;
+  height: 28px;
+
+  @media screen and (min-width: 320px) and (max-width: 1023px) {
+    display: block;
+  }
+}
+
