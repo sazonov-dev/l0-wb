@@ -1,0 +1,7 @@
+@use 'mixins' as *;
+
+.order__basket-total-settings {
+  @include flex-center;
+  gap: 16px;
+  margin-left: auto;
+}

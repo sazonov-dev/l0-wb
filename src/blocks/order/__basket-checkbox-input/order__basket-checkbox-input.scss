@@ -1,0 +1,40 @@
+@use 'variables' as *;
+
+/* Скрыть оригинальный чекбокс */
+.order__basket-checkbox-input {
+  display: none;
+}
+
+/* Стилизация неактивного чекбокса */
+.order__basket-checkbox-label {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background-color: transparent;
+  border: 1px solid $system-gray;
+  cursor: pointer;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Стилизация активного чекбокса */
+.order__basket-checkbox-input:checked + .order__basket-checkbox-label {
+  background-color: #CB11AB;
+  border: none;
+}
+
+/* Стилизация галки внутри чекбокса с использованием SVG */
+.order__basket-checkbox-label:after {
+  content: url('../../../images/order/checkbox/checkbox-active.svg');
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+/* Показать галку, когда чекбокс отмечен */
+.order__basket-checkbox-input:checked + .order__basket-checkbox-label:after {
+  display: block;
+}
+

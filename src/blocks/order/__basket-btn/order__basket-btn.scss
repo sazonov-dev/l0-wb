@@ -1,0 +1,12 @@
+.order__basket-btn {
+  all: unset;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background-image: url('../../../images/order/arrow.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  &.active {
+    transform: rotate(180deg);
+  }
+}

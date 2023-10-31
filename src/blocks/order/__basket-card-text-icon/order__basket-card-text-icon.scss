@@ -1,0 +1,16 @@
+@use 'mixins' as *;
+
+.order__basket-card-text-icon {
+  display: block;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background-image: url('../../../images/order/basket/info-icon.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.info-icon {
+  @include flex-center;
+  gap: 6px;
+}

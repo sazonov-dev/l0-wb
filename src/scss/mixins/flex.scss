@@ -3,10 +3,26 @@
   flex-direction: column;
 }
 
+@mixin flex-start {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
 @mixin flex-center {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@mixin flex-center-end {
+  @include flex-center;
+  justify-content: flex-end;
+}
+
+@mixin flex-center-start {
+  @include flex-center;
+  justify-content: flex-start;
 }
 
 @mixin flex-between {
@@ -21,6 +37,16 @@
 
 @mixin flex-between-column {
   @include flex-between;
+  flex-direction: column;
+}
+
+@mixin flex-start-column {
+  @include flex-start;
+  flex-direction: column;
+}
+
+@mixin flex-center-column-start {
+  @include flex-center-start;
   flex-direction: column;
 }
 

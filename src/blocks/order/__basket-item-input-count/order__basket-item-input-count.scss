@@ -1,0 +1,22 @@
+.order__basket-item-input-count {
+  font-size: 16px;
+  text-align: center;
+  max-width: 44px;
+  max-height: 23px;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding-bottom: 3px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none; // Yeah, yeah everybody write about it
+}
+
+input[type='number'],
+input[type="number"]:hover,
+input[type="number"]:focus {
+  appearance: none;
+  -moz-appearance: textfield;
+}

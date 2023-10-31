@@ -1,0 +1,7 @@
+@use 'mixins' as *;
+
+.order__basket-content {
+  overflow: hidden;
+  position: relative;
+  @include flex-start-column;
+}

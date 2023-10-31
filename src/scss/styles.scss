@@ -3,6 +3,9 @@
  @use '../blocks/body/body';
  @use '../blocks/body/__container/body__container';
 
+ @use '../blocks/burger/burger';
+ @use '../blocks/warning/warning';
+
  @use '../blocks/header/header';
  @use '../blocks/header/__container/header__container';
  @use '../blocks/header/__nav/header__nav';
@@ -19,7 +22,34 @@
  @use '../blocks/basket/basket';
  @use '../blocks/basket/__counter/basket__counter';
 
+ @use '../blocks/order/order';
+ @use '../blocks/order/__border/order__border';
+ @use '../blocks/order/__border-top/order__border-top';
+ @use '../blocks/order/__container/order__container';
+ @use '../blocks/order/__basket/order__basket';
+ @use '../blocks/order/__basket-content/order__basket-content';
+ @use '../blocks/order/__basket-title/order__basket-title';
+ @use '../blocks/order/__basket-settings/order__basket-settings';
+ @use '../blocks/order/__basket-btn/order__basket-btn';
+ @use '../blocks/order/__basket-items/order__basket-items';
+ @use '../blocks/order/__basket-item/order__basket-item';
+ @use '../blocks/order/__basket-card/order__basket-card';
+ @use '../blocks/order/__basket-img/order__basket-img';
+ @use '../blocks/order/__basket-card-info/order__basket-card-info';
+ @use '../blocks/order/__basket-card-name/order__basket-card-name';
+ @use '../blocks/order/__basket-card-description/order__basket-card-description';
+ @use '../blocks/order/__basket-card-text-icon/order__basket-card-text-icon';
+ @use '../blocks/order/__basket-total/order__basket-total';
+ @use '../blocks/order/__basket-total-counter/order__basket-total-counter';
+ @use '../blocks/order/__basket-item-input-count/order__basket-item-input-count';
+ @use '../blocks/order/__basket-item-btn/order__basket-item-btn';
+ @use '../blocks/order/__basket-item-delete/order__basket-item-delete';
+ @use '../blocks/order/__basket-item-like/order__basket-item-like';
+ @use '../blocks/order/__basket-total-settings/order__basket-total-settings';
+ @use '../blocks/order/__basket-price/order__basket-price';
+ @use '../blocks/order/__basket-price-new/order__basket-price-new';
+ @use '../blocks/order/__basket-item-content/order__basket-item-content';
+ @use '../blocks/order/__basket-checkbox-input/order__basket-checkbox-input';
+ @use '../blocks/order/__basket-checkbox/order__basket-checkbox';
+ @use '../blocks/order/__basket-selectAll/order__basket-selectAll';
 
-
-
- @use '../blocks/burger/burger';

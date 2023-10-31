@@ -1,0 +1,12 @@
+@use 'mixins' as *;
+
+.order__basket-card-description {
+  @include flex-start;
+  gap: 16px;
+  font-size: 13px;
+  &.gray {
+    color: #9797AF;
+    @include flex-start-column;
+    gap: 4px;
+  }
+}

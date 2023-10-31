@@ -1,0 +1,5 @@
+@use 'mixins' as *;
+
+.order__basket-checkbox {
+  @include flex-center;
+}

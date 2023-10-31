@@ -1,0 +1,13 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.order__basket-total-counter {
+  @include flex-center;
+  padding: 10px 4px;
+  max-height: 44px;
+  border-radius: 8px;
+  background-color: $system-white;
+  font-size: 20px;
+  line-height: 24px;
+  width: 100%;
+}

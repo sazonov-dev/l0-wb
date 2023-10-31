@@ -1,0 +1,7 @@
+@use 'mixins' as *;
+
+.order__basket-card {
+  @include flex-center;
+  align-items: flex-start;
+  width: 100%;
+}

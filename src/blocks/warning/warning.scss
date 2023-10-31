@@ -1,0 +1,18 @@
+@use 'variables' as *;
+
+.warning {
+  color: $system-warning;
+  font-size: 13px;
+  line-height: 16px;
+  &--gray {
+    margin-left: auto;
+    font-size: 13px;
+    line-height: 16px;
+    color: $system-gray;
+    text-decoration: line-through;
+    text-decoration-color: $system-gray;
+  }
+  &.disabled {
+    display: none;
+  }
+}

@@ -1,0 +1,7 @@
+@use 'mixins' as *;
+
+.order__container {
+  padding: 0 24px 16px 24px;
+  @include flex-between;
+  gap: 32px;
+}

@@ -1,0 +1,8 @@
+@use 'mixins' as *;
+
+.order__basket-item {
+  @include flex-center-start;
+  padding-top: 10px;
+  width: 100%;
+  max-height: 176px;
+}

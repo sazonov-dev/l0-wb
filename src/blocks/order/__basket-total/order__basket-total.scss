@@ -1,0 +1,8 @@
+@use 'mixins' as *;
+
+.order__basket-total {
+  max-width: 100px;
+  width: 100%;
+  @include flex-start-column;
+  gap: 8px;
+}
