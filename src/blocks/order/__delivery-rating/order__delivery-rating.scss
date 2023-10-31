@@ -1,0 +1,6 @@
+@use 'mixins' as *;
+
+.order__delivery-rating {
+  @include flex-start;
+  gap: 4px;
+}

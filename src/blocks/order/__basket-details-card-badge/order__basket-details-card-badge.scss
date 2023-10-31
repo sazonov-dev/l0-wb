@@ -1,0 +1,13 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.order__basket-details-card-badge {
+  @include flex-center;
+  padding: 7.33px 1px;
+  width: 100%;
+  border-radius: 4px;
+  background-color: $system-smoky;
+  max-width: 32px;
+  max-height: 24px;
+  margin-right: 8px;
+}

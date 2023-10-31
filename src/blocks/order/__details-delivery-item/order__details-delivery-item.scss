@@ -1,0 +1,8 @@
+@use 'mixins' as *;
+
+.order__details-delivery-item {
+  @include flex-start;
+  gap: 32px;
+  font-size: 16px;
+  line-height: 24px;
+}

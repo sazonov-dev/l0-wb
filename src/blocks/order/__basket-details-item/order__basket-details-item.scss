@@ -1,0 +1,12 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.order__basket-details-item {
+  padding: 16px 24px 24px 24px;
+  border-radius: 16px;
+  background-color: $system-white;
+  gap: 16px;
+  width: 100%;
+  @include flex-start-column;
+  gap: 16px;
+}

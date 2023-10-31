@@ -1,0 +1,12 @@
+@use 'mixins' as *;
+
+.order__delivery-info {
+  @include flex-start-column;
+  gap: 4px;
+
+  &.images {
+    @include flex-start;
+    flex-direction: row;
+    gap: 8px;
+  }
+}

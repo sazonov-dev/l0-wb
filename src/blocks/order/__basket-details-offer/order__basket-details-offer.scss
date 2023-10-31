@@ -1,0 +1,21 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.order__basket-details-offer {
+  margin-top: 5px;
+  font-size: 13px;
+  line-height: 16px;
+  @include flex-center;
+
+  &::before {
+    content: url("../../../images/order/details/succes.svg");
+    margin-right: 8px;
+  }
+}
+.green {
+  font-size: 13px;
+  line-height: 16px;
+  color: $system-green;
+  margin-left: 4px;
+}
+

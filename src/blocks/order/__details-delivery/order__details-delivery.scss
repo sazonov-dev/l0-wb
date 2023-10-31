@@ -1,0 +1,6 @@
+@use 'mixins' as *;
+
+.order__details-delivery {
+  @include flex-start-column;
+  gap: 16px;
+}

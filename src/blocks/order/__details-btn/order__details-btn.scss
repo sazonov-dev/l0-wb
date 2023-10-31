@@ -1,0 +1,9 @@
+@use 'variables' as *;
+
+.order__details-btn {
+  all: unset;
+  cursor: pointer;
+  color: $system-magenta;
+  font-weight: 700;
+  line-height: 24px;
+}

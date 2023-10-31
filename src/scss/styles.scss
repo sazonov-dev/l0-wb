@@ -53,4 +53,23 @@
  @use '../blocks/order/__basket-checkbox/order__basket-checkbox';
  @use '../blocks/order/__basket-selectAll/order__basket-selectAll';
  @use '../blocks/order/__basket-container/order__basket-container';
-
+ @use '../blocks/order/__basket-details/order__basket-details';
+ @use '../blocks/order/__basket-details-item/order__basket-details-item';
+ @use '../blocks/order/__basket-details-title/order__basket-details-title';
+ @use '../blocks/order/__details-title/order__details-title';
+ @use '../blocks/order/__details-btn/order__details-btn';
+ @use '../blocks/order/__delivery-info/order__delivery-info';
+ @use '../blocks/order/__delivery-info-content-subtext/order__delivery-info-content-subtext';
+ @use '../blocks/order/__delivery-item-title/order__delivery-item-title';
+ @use '../blocks/order/__delivery-rating/order__delivery-rating';
+ @use '../blocks/order/__delivery-rating-star/order__delivery-rating-star';
+ @use '../blocks/order/__details-delivery/order__details-delivery';
+ @use '../blocks/order/__details-delivery-item/order__details-delivery-item';
+ @use '../blocks/order/__delivery-info-quantity/order__delivery-info-quantity';
+ @use '../blocks/order/__delivery-quantity-badge/order__delivery-quantity-badge';
+ @use '../blocks/order/__basket-details-offer/order__basket-details-offer';
+ @use '../blocks/order/__basket-details-card/order__basket-details-card';
+ @use '../blocks/order/__basket-details-card-badge/order__basket-details-card-badge';
+ @use '../blocks/order/__basket-details-card-badge-img/order__basket-details-card-badge-img';
+ @use '../blocks/order/__basket-details-card-info/order__basket-details-card-info';
+ @use '../blocks/order/__basket-details-card-number/order__basket-details-card-number';

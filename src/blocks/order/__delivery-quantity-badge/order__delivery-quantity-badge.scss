@@ -1,0 +1,21 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.order__delivery-quantity-badge {
+  @include flex-center;
+  position: absolute;
+  top: -8px;
+  right: -6px;
+  max-height: 16px;
+  min-width: 16px;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 18px;
+  padding: 1px 2px 0 2px;
+  border-radius: 16px;
+  color: $system-white;
+  background-color: $system-red;
+  &.big-badge {
+    padding: 1px 4px 0px 4px;
+  }
+}

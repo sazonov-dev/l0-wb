@@ -1,0 +1,6 @@
+@use 'mixins' as *;
+
+.order__basket-details-title {
+  width: 100%;
+  @include flex-between;
+}

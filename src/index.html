@@ -222,10 +222,83 @@
                             </ul>
                         </div>
                     </div>
-                </div>
-
-                <div class="order__confirmation">
-
+                    <div class="order__basket-details">
+                        <div class="order__basket-details-item">
+                            <div class="order__basket-details-title">
+                                <h2 class="order__details-title">Способ доставки</h2>
+                                <button class="order__details-btn">Изменить</button>
+                            </div>
+                            <div class="order__details-delivery">
+                                <div class="order__details-delivery-item">
+                                    <h3 class="order__delivery-item-title">Пункт выдачи</h3>
+                                    <div class="order__delivery-info">
+                                        <p class="order__delivery-info-content">Бишкек, улица Ахматбека Суюмбаева, 12/1</p>
+                                        <div class="order__delivery-info-content-subtext">
+                                            <div class="order__delivery-rating">
+                                                <span class="order__delivery-rating-star"></span>
+                                                <p class="order__delivery-rating-text" id="ratingText">4.99</p>
+                                            </div>
+                                            <p class="order__delivery-rating-text">Ежедневно с 10 до 21 </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="order__details-delivery-item">
+                                    <h3 class="order__delivery-item-title">Стоимость доставки</h3>
+                                    <div class="order__delivery-info">
+                                        <p class="order__delivery-info-content">Бесплатно</p>
+                                    </div>
+                                </div>
+                                <div class="order__details-delivery-item">
+                                    <h3 class="order__delivery-item-title">5—6 февраля</h3>
+                                    <div class="order__delivery-info images">
+                                        <div class="order__delivery-info-quantity">
+                                            <img class="order__basket-img order__delivery-img" src="<%=require('./images/order/basket/basket-item-1.png')%>" alt="Изображение товара">
+                                        </div>
+                                        <div class="order__delivery-info-quantity">
+                                            <img class="order__basket-img order__delivery-img" src="<%=require('./images/order/basket/basket-item-2.png')%>" alt="Изображение товара">
+                                            <span class="order__delivery-quantity-badge big-badge">184</span>
+                                        </div>
+                                        <div class="order__delivery-info-quantity">
+                                            <img class="order__basket-img order__delivery-img" src="<%=require('./images/order/basket/basket-item-3.png')%>" alt="Изображение товара">
+                                            <span class="order__delivery-quantity-badge">2</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="order__details-delivery-item">
+                                    <h3 class="order__delivery-item-title">7—8 февраля</h3>
+                                    <div class="order__delivery-info">
+                                        <div class="order__delivery-info-quantity">
+                                            <img class="order__basket-img order__delivery-img" src="<%=require('./images/order/basket/basket-item-2.png')%>" alt="Изображение товара">
+                                            <span class="order__delivery-quantity-badge big-badge">16</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="order__basket-details-offer">Обратная доставка товаров на склад при отказе — <span class="green">бесплатно</span></p>
+                            </div>
+                        </div>
+                        <div class="order__basket-details-item">
+                            <div class="order__basket-details-title">
+                                <h2 class="order__details-title">Способ оплаты</h2>
+                                <button class="order__details-btn">Изменить</button>
+                            </div>
+                            <div class="order__basket-details-card">
+                                <div class="order__basket-details-card-badge">
+                                    <img class="order__basket-details-card-badge-img" src="<%=require('./images/order/details/card-badge-mir.svg')%>" alt="Иконка провайдера карты">
+                                </div>
+                                <p class="order__basket-details-card-number">1234 56•• •••• 1234</p>
+                                <p class="order__basket-details-card-ending">01/30</p>
+                            </div>
+                            <span class="order__basket-details-card-info">Спишем оплату с карты при получении</span>
+                        </div>
+                        <div class="order__basket-details-item">
+                            <div class="order__basket-details-title">
+                                <h2 class="order__details-title">Получатель</h2>
+                            </div>
+                            <div class="order__basket-details-person">
+                                
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="order__border">
