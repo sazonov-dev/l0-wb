@@ -39,123 +39,191 @@
             </div>
             <div class="body__container order__container">
                 <div class="order__basket">
-                    <h2 class="order__basket-title">Корзина</h2>
-                    <div class="order__basket-content">
-                        <div class="order__basket-settings">
-                            <div class="order__basket-checkbox">
-                                <input class="order__basket-checkbox-input" type="checkbox" id="basketAllCheckbox">
-                                <label class="order__basket-checkbox-label" for="basketAllCheckbox"></label>
+                    <div class="order__basket-container">
+                        <h2 class="order__basket-title">Корзина</h2>
+                        <div class="order__basket-content">
+                            <div class="order__basket-settings">
+                                <div class="order__basket-checkbox">
+                                    <input class="order__basket-checkbox-input" type="checkbox" id="basketAllCheckbox">
+                                    <label class="order__basket-checkbox-label" for="basketAllCheckbox"></label>
+                                </div>
+                                <p class="order__basket-selectAll">Выбрать все</p>
+                                <button class="order__basket-btn"></button>
                             </div>
-                            <p class="order__basket-selectAll">Выбрать все</p>
-                            <button class="order__basket-btn"></button>
+                            <ul class="order__basket-items">
+                                <li class="order__basket-item">
+                                    <div class="order__basket-item-content">
+                                        <input class="order__basket-checkbox-input custom-checkbox" type="checkbox" id="checkbox-1">
+                                        <label class="order__basket-checkbox-label" for="checkbox-1"></label>
+                                        <img class="order__basket-img" src="<%=require('./images/order/basket/basket-item-1.png')%>" alt="Изображение товара">
+                                    </div>
+                                    <div class="order__basket-card">
+                                        <div class="order__basket-card-info">
+                                            <p class="order__basket-card-name">Футболка UZcotton мужская</p>
+                                            <div class="order__basket-card-description">
+                                                <p class="order__basket-card-text order__basket-card-color black">Цвет: белый</p>
+                                                <p class="order__basket-card-text order__basket-card-size black">Размер: 56</p>
+                                            </div>
+                                            <div class="order__basket-card-description gray">
+                                                <p class="order__basket-card-text order__basket-card-color">Коледино WB</p>
+                                                <p class="order__basket-card-text order__basket-card-color info-icon">OOO Вайлдберриз <span class="order__basket-card-text-icon"></span></p>
+                                            </div>
+                                        </div>
+                                        <div class="order__basket-total">
+                                            <div class="order__basket-total-counter">
+                                                <button class="order__basket-item-btn">-</button>
+                                                <input class="order__basket-item-input-count" type="number" value="1">
+                                                <button class="order__basket-item-btn">+</button>
+                                            </div>
+                                            <span class="warning">Осталось 2 шт.</span>
+                                            <div class="order__basket-total-settings">
+                                                <button class="order__basket-item-like"></button>
+                                                <button class="order__basket-item-delete"></button>
+                                            </div>
+                                        </div>
+                                        <div class="order__basket-price">
+                                            <p class="order__basket-price-new">522 сом</p>
+                                            <span class="warning--gray">1051 сом</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="order__basket-item">
+                                    <div class="order__basket-item-content">
+                                        <input class="order__basket-checkbox-input custom-checkbox" type="checkbox" id="checkbox-2">
+                                        <label class="order__basket-checkbox-label" for="checkbox-2"></label>
+                                        <img class="order__basket-img" src="<%=require('./images/order/basket/basket-item-2.png')%>" alt="Изображение товара">
+                                    </div>
+                                    <div class="order__basket-card">
+                                        <div class="order__basket-card-info">
+                                            <p class="order__basket-card-name">Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe</p>
+                                            <div class="order__basket-card-description">
+                                                <p class="order__basket-card-text order__basket-card-color black">Цвет: прозрачный</p>
+                                            </div>
+                                            <div class="order__basket-card-description gray">
+                                                <p class="order__basket-card-text order__basket-card-color">Коледино WB</p>
+                                                <p class="order__basket-card-text order__basket-card-color info-icon">OOO Мегапрофстиль <span class="order__basket-card-text-icon"></span></p>
+                                            </div>
+                                        </div>
+                                        <div class="order__basket-total">
+                                            <div class="order__basket-total-counter">
+                                                <button class="order__basket-item-btn">-</button>
+                                                <input class="order__basket-item-input-count" type="number" value="200">
+                                                <button class="order__basket-item-btn">+</button>
+                                            </div>
+                                            <span class="warning disabled"></span>
+                                            <div class="order__basket-total-settings">
+                                                <button class="order__basket-item-like"></button>
+                                                <button class="order__basket-item-delete"></button>
+                                            </div>
+                                        </div>
+                                        <div class="order__basket-price">
+                                            <p class="order__basket-price-new">2 100 047 сом</p>
+                                            <span class="warning--gray">2 300 047 сом</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="order__basket-item">
+                                    <div class="order__basket-item-content">
+                                        <input class="order__basket-checkbox-input custom-checkbox" type="checkbox" id="checkbox-3">
+                                        <label class="order__basket-checkbox-label" for="checkbox-3"></label>
+                                        <img class="order__basket-img" src="<%=require('./images/order/basket/basket-item-3.png')%>" alt="Изображение товара">
+                                    </div>
+                                    <div class="order__basket-card">
+                                        <div class="order__basket-card-info">
+                                            <p class="order__basket-card-name">Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber-Castell </p>
+                                            <div class="order__basket-card-description gray">
+                                                <p class="order__basket-card-text order__basket-card-color">Коледино WB</p>
+                                                <p class="order__basket-card-text order__basket-card-color info-icon">OOO Вайлдберриз <span class="order__basket-card-text-icon"></span></p>
+                                            </div>
+                                        </div>
+                                        <div class="order__basket-total">
+                                            <div class="order__basket-total-counter">
+                                                <button class="order__basket-item-btn">-</button>
+                                                <input class="order__basket-item-input-count" type="number" value="2">
+                                                <button class="order__basket-item-btn disabled">+</button>
+                                            </div>
+                                            <span class="warning">Осталось 2 шт.</span>
+                                            <div class="order__basket-total-settings">
+                                                <button class="order__basket-item-like"></button>
+                                                <button class="order__basket-item-delete"></button>
+                                            </div>
+                                        </div>
+                                        <div class="order__basket-price">
+                                            <p class="order__basket-price-new">494 сом</p>
+                                            <span class="warning--gray">950 сом</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
-                        <ul class="order__basket-items">
-                            <li class="order__basket-item">
-                                <div class="order__basket-item-content">
-                                    <input class="order__basket-checkbox-input custom-checkbox" type="checkbox" id="checkbox-1">
-                                    <label class="order__basket-checkbox-label" for="checkbox-1"></label>
-                                    <img class="order__basket-img" src="<%=require('./images/order/basket/basket-item-1.png')%>" alt="Изображение товара">
-                                </div>
-                                <div class="order__basket-card">
-                                    <div class="order__basket-card-info">
-                                        <p class="order__basket-card-name">Футболка UZcotton мужская</p>
-                                        <div class="order__basket-card-description">
-                                            <p class="order__basket-card-text order__basket-card-color black">Цвет: белый</p>
-                                            <p class="order__basket-card-text order__basket-card-size black">Размер: 56</p>
+                    </div>
+                    <div class="order__basket-container">
+                        <div class="order__basket-content">
+                            <div class="order__basket-settings">
+                                <p class="order__basket-selectAll hidden-title">Отсутствуют &#8729; 3 товара</p>
+                                <button class="order__basket-btn"></button>
+                            </div>
+                            <ul class="order__basket-items">
+                                <li class="order__basket-item hidden-content">
+                                    <div class="order__basket-item-content">
+                                        <img class="order__basket-img hidden-content-img" src="<%=require('./images/order/basket/basket-item-1.png')%>" alt="Изображение товара">
+                                    </div>
+                                    <div class="order__basket-card hidden-card">
+                                        <div class="order__basket-card-info hidden-content-text">
+                                            <p class="order__basket-card-name hidden-name">Футболка UZcotton мужская</p>
+                                            <div class="order__basket-card-description">
+                                                <p class="order__basket-card-text order__basket-card-color black">Цвет: белый</p>
+                                                <p class="order__basket-card-text order__basket-card-size black">Размер: 56</p>
+                                            </div>
                                         </div>
-                                        <div class="order__basket-card-description gray">
-                                            <p class="order__basket-card-text order__basket-card-color">Коледино WB</p>
-                                            <p class="order__basket-card-text order__basket-card-color info-icon">OOO Вайлдберриз <span class="order__basket-card-text-icon"></span></p>
+                                        <div class="order__basket-total">
+                                            <div class="order__basket-total-settings">
+                                                <button class="order__basket-item-like"></button>
+                                                <button class="order__basket-item-delete"></button>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="order__basket-total">
-                                        <div class="order__basket-total-counter">
-                                            <button class="order__basket-item-btn">-</button>
-                                            <input class="order__basket-item-input-count" type="number" value="1">
-                                            <button class="order__basket-item-btn">+</button>
+                                </li>
+                                <li class="order__basket-item hidden-content">
+                                    <div class="order__basket-item-content">
+                                        <img class="order__basket-img hidden-content-img" src="<%=require('./images/order/basket/basket-item-2.png')%>" alt="Изображение товара">
+                                    </div>
+                                    <div class="order__basket-card hidden-card">
+                                        <div class="order__basket-card-info hidden-content-text">
+                                            <p class="order__basket-card-name hidden-name">Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe</p>
+                                            <div class="order__basket-card-description">
+                                                <p class="order__basket-card-text order__basket-card-color black">Цвет: прозрачный</p>
+                                            </div>
                                         </div>
-                                        <span class="warning">Осталось 2 шт.</span>
-                                        <div class="order__basket-total-settings">
-                                            <button class="order__basket-item-like"></button>
-                                            <button class="order__basket-item-delete"></button>
+                                        <div class="order__basket-total">
+                                            <div class="order__basket-total-settings">
+                                                <button class="order__basket-item-like"></button>
+                                                <button class="order__basket-item-delete"></button>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="order__basket-price">
-                                        <p class="order__basket-price-new">522 сом</p>
-                                        <span class="warning--gray">1051 сом</span>
+                                </li>
+                                <li class="order__basket-item hidden-content">
+                                    <div class="order__basket-item-content">
+                                        <img class="order__basket-img hidden-content-img" src="<%=require('./images/order/basket/basket-item-3.png')%>" alt="Изображение товара">
                                     </div>
-                                </div>
-                            </li>
-                            <li class="order__basket-item">
-                                <div class="order__basket-item-content">
-                                    <input class="order__basket-checkbox-input custom-checkbox" type="checkbox" id="checkbox-2">
-                                    <label class="order__basket-checkbox-label" for="checkbox-2"></label>
-                                    <img class="order__basket-img" src="<%=require('./images/order/basket/basket-item-2.png')%>" alt="Изображение товара">
-                                </div>
-                                <div class="order__basket-card">
-                                    <div class="order__basket-card-info">
-                                        <p class="order__basket-card-name">Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe</p>
-                                        <div class="order__basket-card-description">
-                                            <p class="order__basket-card-text order__basket-card-color black">Цвет: прозрачный</p>
+                                    <div class="order__basket-card hidden-card">
+                                        <div class="order__basket-card-info hidden-content-text">
+                                            <p class="order__basket-card-name hidden-name">Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber-Castell </p>
                                         </div>
-                                        <div class="order__basket-card-description gray">
-                                            <p class="order__basket-card-text order__basket-card-color">Коледино WB</p>
-                                            <p class="order__basket-card-text order__basket-card-color info-icon">OOO Мегапрофстиль <span class="order__basket-card-text-icon"></span></p>
+                                        <div class="order__basket-total">
+                                            <div class="order__basket-total-settings">
+                                                <button class="order__basket-item-like"></button>
+                                                <button class="order__basket-item-delete"></button>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="order__basket-total">
-                                        <div class="order__basket-total-counter">
-                                            <button class="order__basket-item-btn">-</button>
-                                            <input class="order__basket-item-input-count" type="number" value="200">
-                                            <button class="order__basket-item-btn">+</button>
-                                        </div>
-                                        <span class="warning disabled"></span>
-                                        <div class="order__basket-total-settings">
-                                            <button class="order__basket-item-like"></button>
-                                            <button class="order__basket-item-delete"></button>
-                                        </div>
-                                    </div>
-                                    <div class="order__basket-price">
-                                        <p class="order__basket-price-new">2 100 047 сом</p>
-                                        <span class="warning--gray">2 300 047 сом</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="order__basket-item">
-                                <div class="order__basket-item-content">
-                                    <input class="order__basket-checkbox-input custom-checkbox" type="checkbox" id="checkbox-3">
-                                    <label class="order__basket-checkbox-label" for="checkbox-3"></label>
-                                    <img class="order__basket-img" src="<%=require('./images/order/basket/basket-item-3.png')%>" alt="Изображение товара">
-                                </div>
-                                <div class="order__basket-card">
-                                    <div class="order__basket-card-info">
-                                        <p class="order__basket-card-name">Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber-Castell </p>
-                                        <div class="order__basket-card-description gray">
-                                            <p class="order__basket-card-text order__basket-card-color">Коледино WB</p>
-                                            <p class="order__basket-card-text order__basket-card-color info-icon">OOO Вайлдберриз <span class="order__basket-card-text-icon"></span></p>
-                                        </div>
-                                    </div>
-                                    <div class="order__basket-total">
-                                        <div class="order__basket-total-counter">
-                                            <button class="order__basket-item-btn">-</button>
-                                            <input class="order__basket-item-input-count" type="number" value="2">
-                                            <button class="order__basket-item-btn disabled">+</button>
-                                        </div>
-                                        <span class="warning">Осталось 2 шт.</span>
-                                        <div class="order__basket-total-settings">
-                                            <button class="order__basket-item-like"></button>
-                                            <button class="order__basket-item-delete"></button>
-                                        </div>
-                                    </div>
-                                    <div class="order__basket-price">
-                                        <p class="order__basket-price-new">494 сом</p>
-                                        <span class="warning--gray">950 сом</span>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+
                 <div class="order__confirmation">
 
                 </div>

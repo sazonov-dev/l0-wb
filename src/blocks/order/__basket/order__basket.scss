@@ -1,5 +1,9 @@
+@use 'mixins' as *;
+
 .order__basket {
   padding-top: 10px;
   max-width: 891px;
+  @include flex-start-column;
+  gap: 40px;
   width: 100%;
 }
