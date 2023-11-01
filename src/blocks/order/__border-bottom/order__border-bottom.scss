@@ -1,0 +1,8 @@
+@use 'variables' as *;
+
+.order__border-bottom {
+  background-color: $system-smoky;
+  height: 24px;
+  border-radius: 0 0 24px 24px;
+  margin-top: 10px;
+}

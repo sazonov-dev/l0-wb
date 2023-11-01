@@ -1,0 +1,30 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.order__info {
+  border-radius: 16px;
+  padding: 16px 24px 24px 24px;
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.30), 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
+  @include flex-start-column;
+  gap: 24px;
+  background-color: $system-white;
+
+  .order__info-delivery-btn {
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    all: unset;
+    cursor: pointer;
+    padding: 7.5px 32px 12.5px 32px;
+    background-color: $system-magenta;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    color: $system-white;
+    border-radius: 8px;
+  }
+
+  @media screen and (min-width: 1024px) and (max-width: 1399px) {
+    max-width: 303px;
+  }
+}

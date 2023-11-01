@@ -1,0 +1,62 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.order__info-delivery {
+  width: 100%;
+  @include flex-start-column;
+  gap: 4px;
+  .order__info-delivery-edit {
+    width: 100%;
+    @include flex-between;
+  }
+  .order__info-delivery-title {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.3px;
+  }
+  .order__info-edit-text {
+    font-size: 13px;
+    line-height: 16px;
+  }
+  .order__info-edit-btn {
+    all: unset;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background-image: url('../../../images/order/info/edit-pen.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .modal-text {
+    color: $system-magenta;
+    padding-bottom: 1px;
+    border-bottom: 1px dashed rgba(203, 17, 171, 0.20);
+  }
+
+  .order__info-delivery-badge {
+    @include flex-start;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 8px 12px 8px;
+    border-radius: 8px;
+    background-color: $system-smoky;
+    width: 100%;
+  }
+
+  .delivery-badge-column {
+    @include flex-start-column;
+    font-size: 13px;
+    line-height: 16px;
+    .order__info-delivery-badge-content {
+      @include flex-start;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+
+  .order__basket-details-card {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,16 @@
+@use 'mixins' as *;
+
+.order__info-delivery-copyright {
+  @include flex-start;
+  gap: 8px;
+  margin-top: -10px;
+
+  p {
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  @media screen and (min-width: 1024px) and (max-width: 1399px) {
+    max-width: 234px;
+  }
+}

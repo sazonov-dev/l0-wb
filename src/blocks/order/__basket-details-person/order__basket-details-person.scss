@@ -1,0 +1,7 @@
+@use 'mixins' as *;
+
+.order__basket-details-person {
+  max-width: 700px;
+  width: 100%;
+  @include flex-start-column;
+}

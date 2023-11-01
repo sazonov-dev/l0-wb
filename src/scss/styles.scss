@@ -25,6 +25,7 @@
  @use '../blocks/order/order';
  @use '../blocks/order/__border/order__border';
  @use '../blocks/order/__border-top/order__border-top';
+ @use '../blocks/order/__border-bottom/order__border-bottom';
  @use '../blocks/order/__container/order__container';
  @use '../blocks/order/__basket/order__basket';
  @use '../blocks/order/__basket-content/order__basket-content';
@@ -69,7 +70,19 @@
  @use '../blocks/order/__delivery-quantity-badge/order__delivery-quantity-badge';
  @use '../blocks/order/__basket-details-offer/order__basket-details-offer';
  @use '../blocks/order/__basket-details-card/order__basket-details-card';
+ @use '../blocks/order/__details-delivery-text/order__details-delivery-text';
  @use '../blocks/order/__basket-details-card-badge/order__basket-details-card-badge';
  @use '../blocks/order/__basket-details-card-badge-img/order__basket-details-card-badge-img';
  @use '../blocks/order/__basket-details-card-info/order__basket-details-card-info';
  @use '../blocks/order/__basket-details-card-number/order__basket-details-card-number';
+ @use '../blocks/order/__basket-details-person/order__basket-details-person';
+ @use '../blocks/order/__basket-person-grid/order__basket-person-grid';
+ @use '../blocks/order/__basket-person-grid-line/order__basket-person-grid-line';
+ @use '../blocks/order/__info/order__info';
+ @use '../blocks/order/__info-total/order__info-total';
+ @use '../blocks/order/__info-delivery/order__info-delivery';
+ @use '../blocks/order/__info-delivery-copyright/order__info-delivery-copyright';
+
+ @use '../blocks/footer/footer';
+ @use '../blocks/footer/__container/footer__container';
+ @use '../blocks/footer/__container-copyright/footer__container-copyright';

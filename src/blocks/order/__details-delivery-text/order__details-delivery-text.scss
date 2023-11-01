@@ -1,0 +1,7 @@
+@use 'mixins' as *;
+
+.order__details-delivery-text {
+  @include flex-start;
+  align-items: center;
+  gap: 8px;
+}

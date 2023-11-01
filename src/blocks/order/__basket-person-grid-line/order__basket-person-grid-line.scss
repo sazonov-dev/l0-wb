@@ -1,0 +1,35 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.order__basket-person-grid-line {
+  @include flex-start-column;
+  min-height: 64px;
+
+  .line-input {
+    border: none;
+    outline: none;
+    padding-bottom: 3px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+    font-size: 16px;
+    line-height: 24px;
+    width: 100%;
+    &::placeholder {
+      color: $system-gray;
+    }
+  }
+  .line-label {
+    width: 100%;
+    min-height: 16px;
+    font-size: 13px;
+    color: $system-gray;
+    line-height: 16px;
+    padding-bottom: 2px;
+  }
+  .line-error {
+    font-size: 12px;
+    line-height: 14px;
+    width: 100%;
+    min-height: 14px;
+    padding-top: 4px;
+  }
+}

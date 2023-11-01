@@ -17,6 +17,7 @@
 .hidden-title {
   font-weight: 600;
   margin: 0 !important;
+  letter-spacing: -0.35px
 }
 
 .hidden-content {
@@ -34,8 +35,12 @@
 
 .hidden-content-text {
   color: $system-gray !important;
-  max-width: 309px;
-  margin-right: 268px;
+  max-width: 309px !important;
+  width: 100%;
+  margin-right: 17px;
+  @media screen and (min-width: 1400px){
+    margin-right: 268px;
+  }
 }
 
 .hidden-name {

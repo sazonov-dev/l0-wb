@@ -9,4 +9,10 @@
     @include flex-start-column;
     gap: 4px;
   }
+
+  @media screen and (min-width: 320px) and (max-width: 1023px) {
+    .order__basket-card-size, .info-icon {
+      display: none;
+    }
+  }
 }
