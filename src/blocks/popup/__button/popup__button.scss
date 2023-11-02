@@ -1,0 +1,14 @@
+@use 'variables' as *;
+
+.popup__button {
+  all: unset;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  background-color: $system-magenta;
+  color: $system-white;
+  padding: 7.5px 48px 12.5px;
+  border-radius: 8px;
+  letter-spacing: 0.514px;
+}

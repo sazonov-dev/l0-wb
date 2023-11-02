@@ -1,0 +1,16 @@
+@use 'mixins' as *;
+
+.popup__card {
+  padding: 0 22px 123px;
+  @include flex-start-column;
+  justify-content: flex-start;
+  gap: 16px;
+  &.payment-card {
+    padding-bottom: 33px;
+  }
+  .popup__card-title {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+  }
+}

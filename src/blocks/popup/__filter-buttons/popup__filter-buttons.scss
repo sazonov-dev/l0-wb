@@ -1,0 +1,23 @@
+@use 'mixins' as *;
+
+.popup__filter-buttons {
+  @include flex-between;
+  padding: 0 22px;
+  margin-bottom: 24px;
+  gap: 8px;
+  .popup__button-top {
+    all: unset;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    min-height: 36px;
+    border-radius: 20px;
+    border: 2px solid rgba(203, 17, 171, 0.15);
+    &.active {
+      border: 2px solid #CB11AB;
+    }
+  }
+}

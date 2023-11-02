@@ -1,0 +1,63 @@
+@use 'mixins' as *;
+
+.popup__card-item {
+  @include flex-start;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+  width: 100%;
+
+  .order__basket-item-delete {
+    margin: 8px 0;
+  }
+
+  .order__basket-details-card-badge, .order__basket-details-card-number{
+    margin: 0;
+  }
+
+  .custom-radio {
+    position: relative;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+  }
+
+  .delivery-radio {
+    margin: 9px 0 7px;
+  }
+
+  .custom-radio input[type="radio"] {
+    display: none;
+  }
+
+  .radio-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid gray;
+  }
+
+  .custom-radio input[type="radio"]:checked + .radio-btn {
+    background-color: #CB11AB;
+    border-color: #CB11AB;
+  }
+
+  .custom-radio input[type="radio"]:checked + .radio-btn:after {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+}

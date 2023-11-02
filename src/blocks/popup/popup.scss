@@ -1,0 +1,13 @@
+@use 'variables' as *;
+
+.popup {
+  max-width: 500px;
+  min-width: 400px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 16px;
+  z-index: 2;
+  background-color: $system-white;
+}

@@ -1,7 +1,8 @@
 import './scss/styles.scss';
 import { adjustStart } from './utils/basketPriceOptimization';
-import { checkboxChangesStart } from "./utils/basketCheckbox";
+import { checkboxChangesStart, uniqueCheckboxesStart } from "./utils/basketCheckbox";
 import { visibilityHandler } from "./utils/basketToggleVisibility";
+import { startPopup } from './utils/popup';
 
 const inputValidatorHandler = () => {
     const decrementBtn = document.querySelectorAll('#decrement');
@@ -51,12 +52,15 @@ const inputCounter = (event) => {
 }
 
 const priceBasketChanger = (state, price, lastPrice, currency, discountSelector, priceSelector, key, mainContainer) => {
+    const totalBasketCount = Number(localStorageGetValue('basketTotalCount'));
+
     switch (state) {
         case "increment":
             priceSelector.innerText = `${(lastPrice + price).toLocaleString()} ${currency}`;
             discountSelector.innerText = `${((lastPrice + price) * 2).toLocaleString()} ${currency}`;
             priceSelector.dataset.lastprice = lastPrice + price;
-            localStorageHandler('totalPrice', priceSelector.dataset.lastprice); // необходимо будет сохранять значение lastprice
+            localStorageHandler('basketTotalCount', totalBasketCount + 1);
+            localStorageHandler('totalPrice', price); // необходимо будет сохранять значение lastprice
             let updatedItemCount = Number(mainContainer.querySelector('.order__basket-item-input-count').value) + 1;
             mainContainer.querySelector('.order__basket-item-input-count').value = String(updatedItemCount);
             localStorageHandler('itemOrders', { value: updatedItemCount, key: key });
@@ -66,6 +70,8 @@ const priceBasketChanger = (state, price, lastPrice, currency, discountSelector,
             priceSelector.innerText = `${newLastPrice.toLocaleString()} ${currency}`;
             discountSelector.innerText = `${(newLastPrice * 2).toLocaleString()} ${currency}`;
             priceSelector.dataset.lastprice = newLastPrice;
+            localStorageHandler('basketTotalCount', totalBasketCount - 1);
+            localStorageHandler('totalPrice', priceSelector.dataset.lastprice);
             const updatedItemCountData = Number(mainContainer.querySelector('.order__basket-item-input-count').value) - 1;
             mainContainer.querySelector('.order__basket-item-input-count').value = String(updatedItemCountData);
             localStorageHandler('itemOrders', { value: updatedItemCountData, key: key });
@@ -78,27 +84,31 @@ const priceBasketChanger = (state, price, lastPrice, currency, discountSelector,
 
 const initLocalStorage = () => {
     if (!localStorage.getItem("totalPrice") && !localStorage.getItem("basketTotalCount") && !localStorage.getItem('totalDiscount') && !localStorage.getItem("itemOrders")) {
-        localStorage.setItem("totalPrice", "11269");
+        localStorage.setItem("totalPrice", "11008");
         localStorage.setItem("basketTotalCount", "3");
         localStorage.setItem("totalDiscount", localStorage.getItem("totalPrice"));
         localStorage.setItem("itemOrders", JSON.stringify({tShirt: 1, cardHolder: 1, pencil: 1}));
+        localStorage.setItem("itemPrices", JSON.stringify({tShirt: 261, cardHolder: 10500, pencil: 247}));
     }
     return null;
 }
 
-const localStorageChanger = (key, value) => localStorage.setItem(key, value);
-const localStorageGetValue = (key) => localStorage.getItem(key);
+export const localStorageChanger = (key, value) => localStorage.setItem(key, value);
+export const localStorageGetValue = (key) => localStorage.getItem(key);
 
-const localStorageHandler = (key, payload) => {
+export const localStorageHandler = (key, payload) => {
     switch (key) {
         case "totalPrice":
             const prevTotalPriceValue = localStorageGetValue(key);
             const newTotalPriceValue = Number(prevTotalPriceValue) + Number(payload);
+            localStorageChanger("totalDiscount", (newTotalPriceValue / 2).toFixed(0));
             return localStorageChanger(key, newTotalPriceValue);
         case "itemOrders":
             const prevItemValue = JSON.parse(localStorageGetValue("itemOrders"));
             const newItemValue = {...prevItemValue, [payload.key]: payload.value}
             return localStorageChanger("itemOrders", JSON.stringify(newItemValue));
+        case "basketTotalCount":
+            localStorageChanger("basketTotalCount", payload);
     }
 }
 
@@ -111,11 +121,11 @@ const interactiveStorageData = () => {
     const totalStorageDiscount = Number(localStorageGetValue('totalDiscount'));
     const inputs = document.querySelectorAll('.order__basket-item-input-count');
     const prices = document.querySelectorAll('.order__basket-price-new');
-    const basketCounter = document.querySelector('.basket__counter').innerText = localStorageGetValue('basketTotalCount');
-    const totalPrice = document.querySelector('.order__info-total-price').innerText = `${totalStoragePrice.toLocaleString()} сом`;
-    const totalProductCount = document.querySelector('#totalProductCount').innerText = `${localStorageGetValue('basketTotalCount')} товара`;
-    const totalProductPrice = document.querySelector('#totalProductPrice').innerText = `${(totalStoragePrice + totalStorageDiscount).toLocaleString()} сом`;
-    const totalProductDiscount = document.querySelector('#totalProductDiscount').innerText = `-${totalStorageDiscount.toLocaleString()} сом`;
+    // const basketCounter = document.querySelector('.basket__counter').innerText = localStorageGetValue('basketTotalCount');
+    // const totalPrice = document.querySelector('.order__info-total-price').innerText = `${totalStoragePrice.toLocaleString()} сом`;
+    // const totalProductCount = document.querySelector('#totalProductCount').innerText = `${localStorageGetValue('basketTotalCount')} товара`;
+    // const totalProductPrice = document.querySelector('#totalProductPrice').innerText = `${(totalStoragePrice + totalStorageDiscount).toLocaleString()} сом`;
+    // const totalProductDiscount = document.querySelector('#totalProductDiscount').innerText = `-${totalStorageDiscount.toLocaleString()} сом`;
     const storageValue = JSON.parse(localStorageGetValue("itemOrders"));
 
     inputs.forEach((input) => {
@@ -132,6 +142,14 @@ const interactiveStorageData = () => {
     })
 }
 
+// const checkboxSelectAll = document.querySelector('#checkboxSelectAll');
+//
+// const checkboxHandler = (event) => {
+//     const target = event.target;
+// }
+//
+// checkboxSelectAll.addEventListener('click', checkboxHandler);
+
 inputValidatorHandler()
 
 const startApp = () => {
@@ -139,7 +157,9 @@ const startApp = () => {
     interactiveStorageData();
     adjustStart();
     checkboxChangesStart();
+    uniqueCheckboxesStart();
     visibilityHandler();
+    startPopup();
 }
 
 startApp()

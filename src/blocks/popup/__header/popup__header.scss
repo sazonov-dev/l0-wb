@@ -1,0 +1,7 @@
+@use 'mixins' as *;
+
+.popup__header {
+  @include flex-between;
+  align-items: baseline;
+  padding: 16px 24px 13px 24px;
+}

@@ -86,3 +86,15 @@
  @use '../blocks/footer/footer';
  @use '../blocks/footer/__container/footer__container';
  @use '../blocks/footer/__container-copyright/footer__container-copyright';
+
+ @use '../blocks/overlay/overlay';
+ @use '../blocks/popup/popup';
+ @use '../blocks/popup/__header/popup__header';
+ @use '../blocks/popup/__header-title/popup__header-title';
+ @use '../blocks/popup/__card/popup__card';
+ @use '../blocks/popup/__card-item/popup__card-item';
+ @use '../blocks/popup/__button-container/popup__button-container';
+ @use '../blocks/popup/__button/popup__button';
+ @use '../blocks/popup/__header-exit/popup__header-exit';
+ @use '../blocks/popup/__card-item-text/popup__card-item-text';
+ @use '../blocks/popup/__filter-buttons/popup__filter-buttons';
