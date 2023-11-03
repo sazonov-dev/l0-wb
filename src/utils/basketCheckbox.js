@@ -1,4 +1,4 @@
-import {localStorageGetValue} from "../index";
+import {localStorageGetValue} from "./localStorage";
 
 const mainCheckbox = document.querySelector('#basketAllCheckbox');
 const uniqueCheckboxes = document.querySelectorAll('.custom-checkbox');
@@ -19,11 +19,19 @@ const checkboxCheckedHandler = (state) => {
 
     switch (state) {
         case true:
-            allCheckboxes.forEach((checkbox) => checkbox.checked = true);
+            allCheckboxes.forEach((checkbox) => {
+                if (checkbox.id !== 'delivery-checkbox') {
+                    checkbox.checked = true
+                }
+            });
             basketModalHandler(true);
             break;
         case false:
-            allCheckboxes.forEach((checkbox) => checkbox.checked = false);
+            allCheckboxes.forEach((checkbox) => {
+                if (checkbox.id !== 'delivery-checkbox') {
+                    checkbox.checked = false
+                }
+            });
             basketModalHandler(false);
             break;
         default:
@@ -82,22 +90,46 @@ export const uniqueCheckboxHandler = (event) => {
             itemPrice = Number(itemPrices["tShirt"]) * Number(itemsCount["tShirt"])
             console.log(itemPrice)
             if (target.checked) {
-                return basketModalHandler(true, {totalPrice: itemPrice, totalProductCount: Number(itemsCount["tShirt"]), totalProductPrice: itemPrice + (itemPrice / 2), totalProductDiscount: (itemPrice * 2)})
+                return basketModalHandler(true, {totalPrice: itemPrice.toLocaleString(), totalProductCount: Number(itemsCount["tShirt"]), totalProductPrice: itemPrice + (itemPrice / 2), totalProductDiscount: (itemPrice * 2)})
             }
 
             return basketModalHandler(false);
         case "checkbox-2":
             itemPrice = Number(itemPrices["cardHolder"]) * Number(itemsCount["cardHolder"])
             if (target.checked) {
-                return basketModalHandler(true, {totalPrice: itemPrice, totalProductCount: Number(itemsCount["cardHolder"]), totalProductPrice: itemPrice + (itemPrice / 2), totalProductDiscount: (itemPrice / 2)})
+                return basketModalHandler(true, {totalPrice: itemPrice.toLocaleString(), totalProductCount: Number(itemsCount["cardHolder"]), totalProductPrice: itemPrice + (itemPrice / 2), totalProductDiscount: (itemPrice / 2)})
             }
             return basketModalHandler(false);
         case "checkbox-3":
             itemPrice = Number(itemPrices["pencil"]) * Number(itemsCount["pencil"])
             if (target.checked) {
-                return basketModalHandler(true, {totalPrice: itemPrice, totalProductCount: Number(itemsCount["pencil"]), totalProductPrice: itemPrice + (itemPrice / 2), totalProductDiscount: (itemPrice * 2)})
+                return basketModalHandler(true, {totalPrice: itemPrice.toLocaleString(), totalProductCount: Number(itemsCount["pencil"]), totalProductPrice: itemPrice + (itemPrice / 2), totalProductDiscount: (itemPrice * 2)})
             }
             return basketModalHandler(false);
+        case "delivery-checkbox":
+            if (target.checked && isAnyInputChecked()) {
+                return basketDeliveryButtonHandler(true);
+            }
+
+            return basketDeliveryButtonHandler(false);
+    }
+}
+
+const isAnyInputChecked = () => Array.from(uniqueCheckboxes).filter((checkbox) => checkbox.id !== 'delivery-checkbox').some((checkbox) => checkbox.checked);
+
+const basketDeliveryButtonHandler = (state) => {
+    const totalStoragePrice = Number(localStorageGetValue('totalPrice'));
+    const button = document.querySelector('.order__info-delivery-btn');
+
+    switch (state) {
+        case true:
+            button.innerText = `Оплатить ${totalStoragePrice.toLocaleString()} сом`;
+            break;
+        case false:
+            button.innerText = `Заказать`;
+            break;
+        default:
+            console.log("Не известный стейт, basketDeliveryButtonHandler")
     }
 }
 

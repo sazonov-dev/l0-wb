@@ -15,7 +15,9 @@ const openModal = (modal) => {
 
 const closeModalByIcon = (modal) => {
     const closeButton = modal.querySelector('.popup__header-exit');
+    const selectButton = modal.querySelector('.popup__button');
     closeButton.addEventListener('click', () => modal.closest('.overlay').classList.remove('active'));
+    selectButton.addEventListener('click', () => modal.closest('.overlay').classList.remove('active'))
 }
 
 const closeModalByEsc = (modal) => {

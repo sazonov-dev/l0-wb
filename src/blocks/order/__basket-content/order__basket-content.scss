@@ -1,7 +1,7 @@
 @use 'mixins' as *;
 
 .order__basket-content {
-  overflow: hidden;
+  //overflow: hidden;
   position: relative;
   @include flex-start-column;
   max-height: 516px;

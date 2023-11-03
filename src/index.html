@@ -67,6 +67,11 @@
                                             <div class="order__basket-card-description gray">
                                                 <p class="order__basket-card-text order__basket-card-color">Коледино WB</p>
                                                 <p class="order__basket-card-text order__basket-card-color info-icon">OOO Вайлдберриз <span class="order__basket-card-text-icon"></span></p>
+                                                <div class="order__basket-modal">
+                                                    <span class="order__basket-modal-text title">OOO «Вайлдберриз»</span>
+                                                    <span class="order__basket-modal-text">ОГРН: 5167746237148</span>
+                                                    <span class="order__basket-modal-text">129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34</span>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="order__basket-total">
@@ -78,7 +83,7 @@
                                             <span class="warning">Осталось 2 шт.</span>
                                             <div class="order__basket-total-settings">
                                                 <button class="order__basket-item-like"></button>
-                                                <button class="order__basket-item-delete"></button>
+                                                <button class="order__basket-item-delete" id="delete-item"></button>
                                             </div>
                                         </div>
                                         <div class="order__basket-price">
@@ -102,6 +107,11 @@
                                             <div class="order__basket-card-description gray">
                                                 <p class="order__basket-card-text order__basket-card-color">Коледино WB</p>
                                                 <p class="order__basket-card-text order__basket-card-color info-icon">OOO Мегапрофстиль <span class="order__basket-card-text-icon"></span></p>
+                                                <div class="order__basket-modal">
+                                                    <span class="order__basket-modal-text title">OOO «МЕГАПРОФСТИЛЬ»</span>
+                                                    <span class="order__basket-modal-text">ОГРН: 5167746237148</span>
+                                                    <span class="order__basket-modal-text">129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34</span>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="order__basket-total">
@@ -113,7 +123,7 @@
                                             <span class="warning disabled"></span>
                                             <div class="order__basket-total-settings">
                                                 <button class="order__basket-item-like"></button>
-                                                <button class="order__basket-item-delete"></button>
+                                                <button class="order__basket-item-delete" id="delete-item"></button>
                                             </div>
                                         </div>
                                         <div class="order__basket-price">
@@ -134,6 +144,11 @@
                                             <div class="order__basket-card-description gray">
                                                 <p class="order__basket-card-text order__basket-card-color">Коледино WB</p>
                                                 <p class="order__basket-card-text order__basket-card-color info-icon">OOO Вайлдберриз <span class="order__basket-card-text-icon"></span></p>
+                                                <div class="order__basket-modal">
+                                                    <span class="order__basket-modal-text title">OOO «Вайлдберриз»</span>
+                                                    <span class="order__basket-modal-text">ОГРН: 5167746237148</span>
+                                                    <span class="order__basket-modal-text">129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34</span>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="order__basket-total">
@@ -145,7 +160,7 @@
                                             <span class="warning">Осталось 2 шт.</span>
                                             <div class="order__basket-total-settings">
                                                 <button class="order__basket-item-like"></button>
-                                                <button class="order__basket-item-delete"></button>
+                                                <button class="order__basket-item-delete" id="delete-item"></button>
                                             </div>
                                         </div>
                                         <div class="order__basket-price">
@@ -179,7 +194,7 @@
                                         <div class="order__basket-total">
                                             <div class="order__basket-total-settings">
                                                 <button class="order__basket-item-like"></button>
-                                                <button class="order__basket-item-delete"></button>
+                                                <button class="order__basket-item-delete" id="delete-item"></button>
                                             </div>
                                         </div>
                                     </div>
@@ -198,7 +213,7 @@
                                         <div class="order__basket-total">
                                             <div class="order__basket-total-settings">
                                                 <button class="order__basket-item-like"></button>
-                                                <button class="order__basket-item-delete"></button>
+                                                <button class="order__basket-item-delete" id="delete-item"></button>
                                             </div>
                                         </div>
                                     </div>
@@ -214,7 +229,7 @@
                                         <div class="order__basket-total">
                                             <div class="order__basket-total-settings">
                                                 <button class="order__basket-item-like"></button>
-                                                <button class="order__basket-item-delete"></button>
+                                                <button class="order__basket-item-delete" id="delete-item"></button>
                                             </div>
                                         </div>
                                     </div>
@@ -276,6 +291,9 @@
                                 <div class="order__details-delivery-text">
                                     <img src="<%=require('./images/order/details/succes.svg')%>" alt="Иконка зеленая подтвержденная галка">
                                     <p class="order__basket-details-offer">Обратная доставка товаров на склад при отказе — <span class="green">бесплатно</span></p>
+                                    <div class="order__basket-modal">
+                                        <span class="order__basket-modal-text">Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -360,6 +378,9 @@
                         <div class="order__info-delivery-badge">
                             <img src="<%=require('./images/order/details/succes.svg')%>" alt="Иконка зеленая подтвержденная галка">
                             <p class="order__basket-details-offer">Обратная доставка товаров на склад при отказе — <span class="green">бесплатно</span></p>
+                            <div class="order__basket-modal">
+                                <span class="order__basket-modal-text">Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно</span>
+                            </div>
                         </div>
                     </div>
                     <div class="order__info-delivery">
@@ -376,8 +397,8 @@
                         <div class="order__info-delivery-badge delivery-badge-column">
                             <div class="order__info-delivery-badge-content">
                                 <div class="order__basket-checkbox">
-                                    <input class="order__basket-checkbox-input" type="checkbox" id="delivery">
-                                    <label class="order__basket-checkbox-label" for="delivery"></label>
+                                    <input class="order__basket-checkbox-input custom-checkbox" type="checkbox" id="delivery-checkbox">
+                                    <label class="order__basket-checkbox-label" for="delivery-checkbox"></label>
                                 </div>
                                 <p class="order__info-delivery-text">Списать оплату сразу</p>
                             </div>
@@ -472,23 +493,23 @@
                         <span class="radio-btn"></span>
                     </label>
                     <p class="popup__card-item-text">Бишкек, улица Табышалиева, 57</p>
-                    <button class="order__basket-item-delete"></button>
+                    <button class="order__basket-item-delete" id="delete-item-popup"></button>
                 </div>
                 <div class="popup__card-item">
-                    <label class="custom-radio">
+                    <label class="custom-radio delivery-radio">
                         <input type="radio" name="custom-radio" />
                         <span class="radio-btn"></span>
                     </label>
                     <p class="popup__card-item-text">Бишкек, улица Жукеева-Пудовкина, 77/1</p>
-                    <button class="order__basket-item-delete"></button>
+                    <button class="order__basket-item-delete" id="delete-item-popup"></button>
                 </div>
                 <div class="popup__card-item">
-                    <label class="custom-radio">
+                    <label class="custom-radio delivery-radio">
                         <input type="radio" name="custom-radio" />
                         <span class="radio-btn"></span>
                     </label>
                     <p class="popup__card-item-text">Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1</p>
-                    <button class="order__basket-item-delete"></button>
+                    <button class="order__basket-item-delete" id="delete-item-popup"></button>
                 </div>
             </div>
             <div class="popup__button-container">

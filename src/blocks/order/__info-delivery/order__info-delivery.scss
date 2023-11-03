@@ -42,6 +42,8 @@
     border-radius: 8px;
     background-color: $system-smoky;
     width: 100%;
+    position: relative;
+    z-index: 2;
   }
 
   .delivery-badge-column {
