@@ -5,4 +5,4 @@
 2. npm i
 3. npm run dev
 
-Задеплоенный проект - 
+Задеплоенный проект - https://sazonov-dev.github.io/l0-wb/
