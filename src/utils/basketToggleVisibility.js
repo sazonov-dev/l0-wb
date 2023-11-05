@@ -13,7 +13,7 @@ export const visibilityHandler = () => {
 
     basketBoxes.forEach((element) => {
         const button = element.querySelector('.order__basket-btn');
-        const box = element.querySelector('.order__basket-items');
+        const box = element.querySelector('.order-basket__container');
         button.addEventListener('click', () => toggleVisibility(box, button))
     })
 }

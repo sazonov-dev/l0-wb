@@ -5,8 +5,8 @@ const deleteItems = (event) => {
 
     switch (target.id) {
         case "delete-item":
-            parent = target.closest('.order__basket-items');
-            item = target.closest('.order__basket-item');
+            parent = target.closest('.order-basket__container');
+            item = target.closest('.order-grid');
             parent.removeChild(item);
             break;
         case "delete-item-popup":

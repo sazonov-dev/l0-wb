@@ -1,4 +1,4 @@
-const infoIcons = document.querySelectorAll('.info-icon');
+const infoIcons = document.querySelectorAll('.order__basket-card-text-icon');
 const freeDeliveryIcon = document.querySelectorAll('.green');
 
 export const mouseOverModalHandler = () => {

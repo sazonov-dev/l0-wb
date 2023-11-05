@@ -1,25 +1,21 @@
 import './scss/styles.scss';
-import {adjustStart} from './utils/basketPriceOptimization';
-import {checkboxChangesStart, uniqueCheckboxesStart} from "./utils/basketCheckbox";
 import {visibilityHandler} from "./utils/basketToggleVisibility";
 import {startPopup} from './utils/popup';
 import {initLocalStorage, interactiveStorageData} from './utils/localStorage';
-import {inputValidatorHandler, inputValidateStart} from './utils/inputValidator';
+import {inputValidateStart} from './utils/inputValidator';
 import {deleteItemsHandler} from "./utils/deleteItems";
 import {mouseOverModalHandler} from "./utils/mouseOverModal";
+import {startBasket} from "./utils/basket";
 
 const startApp = () => {
-    // initLocalStorage();
+    initLocalStorage();
     // interactiveStorageData();
-    // adjustStart();
-    // checkboxChangesStart();
-    // inputValidatorHandler();
-    // inputValidateStart();
-    // uniqueCheckboxesStart();
-    // deleteItemsHandler();
-    // mouseOverModalHandler();
-    // visibilityHandler();
-    // startPopup();
+    startBasket();
+    inputValidateStart();
+    deleteItemsHandler();
+    mouseOverModalHandler();
+    visibilityHandler();
+    startPopup();
 }
 
 startApp()
