@@ -9,17 +9,17 @@ import {deleteItemsHandler} from "./utils/deleteItems";
 import {mouseOverModalHandler} from "./utils/mouseOverModal";
 
 const startApp = () => {
-    initLocalStorage();
-    interactiveStorageData();
-    adjustStart();
-    checkboxChangesStart();
-    inputValidatorHandler();
-    inputValidateStart();
-    uniqueCheckboxesStart();
-    deleteItemsHandler();
-    mouseOverModalHandler();
-    visibilityHandler();
-    startPopup();
+    // initLocalStorage();
+    // interactiveStorageData();
+    // adjustStart();
+    // checkboxChangesStart();
+    // inputValidatorHandler();
+    // inputValidateStart();
+    // uniqueCheckboxesStart();
+    // deleteItemsHandler();
+    // mouseOverModalHandler();
+    // visibilityHandler();
+    // startPopup();
 }
 
 startApp()

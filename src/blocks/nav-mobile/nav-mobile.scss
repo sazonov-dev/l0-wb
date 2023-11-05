@@ -1,0 +1,45 @@
+@use 'mixins' as *;
+
+.nav-mobile {
+  @include flex-between;
+  display: none;
+  padding: 14px 13px;
+  background-color: #fff;
+  max-height: 56px;
+  box-shadow: 0px -0.5px 0px 0px rgba(0, 0, 0, 0.30);
+
+
+  .nav-mobile__btn {
+    all: unset;
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &.main {
+      background-image: url("../../images/mobile-nav/main.svg");
+    }
+
+    &.catalog {
+      background-image: url("../../images/mobile-nav/catalog.svg");
+    }
+
+    &.favorites {
+      background-image: url("../../images/mobile-nav/favorites.svg");
+    }
+
+    &.profile {
+      background-image: url("../../images/mobile-nav/profile.svg");
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
+    display: flex;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 5;
+  }
+}

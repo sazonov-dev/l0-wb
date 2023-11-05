@@ -10,4 +10,7 @@
   &.active {
     display: block;
   }
+  &:hover {
+    cursor: pointer;
+  }
 }

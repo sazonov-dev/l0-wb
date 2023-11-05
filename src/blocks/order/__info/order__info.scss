@@ -2,6 +2,7 @@
 @use 'variables' as *;
 
 .order__info {
+  max-width: 429px  ;
   border-radius: 16px;
   padding: 16px 24px 24px 24px;
   box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.30), 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
@@ -26,5 +27,49 @@
 
   @media screen and (min-width: 1024px) and (max-width: 1399px) {
     max-width: 303px;
+  }
+
+  @media screen and (max-width: 1023px) {
+    background-color: transparent ;
+    box-shadow: none;
+    padding: 8px 16px 16px 16px;
+    gap: 16px;
+
+    .order__info-delivery-badge {
+      background-color: #F0ECF4 !important;
+    }
+
+    .order__info-delivery-btn {
+      margin-top: 8px;
+      margin-bottom: 6px;
+    }
+
+    .total__price {
+      font-size: 20px;
+      line-height: 28px;
+      letter-spacing: -0.2px;
+    }
+
+    .order__info-delivery-edit {
+      &.none {
+        display: none;
+      }
+    }
+    .order__info-edit-text {
+      &.none {
+        display: none;
+      }
+    }
+    .order__info-delivery-edit {
+      &.none {
+        display: none;
+      }
+    }
+    .order__basket-details-card {
+      &.none {
+        display: none;
+      }
+    }
+
   }
 }

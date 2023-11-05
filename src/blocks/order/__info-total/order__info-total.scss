@@ -16,6 +16,15 @@
       font-weight: 700;
       line-height: 32px;
       letter-spacing: -0.24px;
+
+    }
+
+    @media screen and (max-width: 1023px){
+      .order__info-total-price, .order__info-total-title{
+        font-size: 20px;
+        line-height: 28px;
+        letter-spacing: -0.2px
+      }
     }
   }
 

@@ -1,3 +1,5 @@
+const body = document.querySelector('.body');
+const overlay = body.querySelector('.overlay');
 const popupDelivery = document.querySelector('#popup__delivery');
 const popupPayment = document.querySelector('#popup__payment');
 const deliveryButtons = document.querySelectorAll('#delivery-popup-btn');
@@ -10,25 +12,31 @@ const modalHandler = (modal) => {
 }
 
 const openModal = (modal) => {
-    modal.closest('.overlay').classList.add('active');
+    modal.classList.add('active');
+    overlay.classList.add('active');
 }
 
 const closeModalByIcon = (modal) => {
     const closeButton = modal.querySelector('.popup__header-exit');
     const selectButton = modal.querySelector('.popup__button');
-    closeButton.addEventListener('click', () => modal.closest('.overlay').classList.remove('active'));
-    selectButton.addEventListener('click', () => modal.closest('.overlay').classList.remove('active'))
+    closeButton.addEventListener('click', () => {
+        modal.classList.remove('active')
+        overlay.classList.remove('active');
+    });
+    selectButton.addEventListener('click', () => {
+        modal.classList.remove('active')
+        overlay.classList.remove('active');
+    })
 }
 
 const closeModalByEsc = (modal) => {
-    const overlay = modal.closest('.overlay');
     overlay.addEventListener('click', (evt) => {
-        if (evt.target.classList.contains('overlay')) {
-            overlay.classList.remove('active')
-        }
+        overlay.classList.remove('active');
+        modal.classList.remove('active')
     });
     document.addEventListener('keydown', (evt) => {
         if (evt.key === 'Escape') {
+            modal.classList.remove('active')
             overlay.classList.remove('active')
         }
     })

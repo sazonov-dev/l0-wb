@@ -1,7 +1,23 @@
 @use 'variables' as *;
+@use 'mixins' as *;
 
 .order {
   background-color: $system-smoky;
   width: 100%;
   min-height: 100vh;
+
+  .order-info {
+    @include flex-start;
+    gap: 32px;
+
+    @media screen and (max-width: 1399px) {
+      padding: 0 24px;
+    }
+
+    @media screen and (max-width: 1023px) {
+      @include flex-start-column;
+      padding: 0;
+      max-width: 320px;
+    }
+  }
 }

@@ -9,4 +9,54 @@
   width: 100%;
   @include flex-start-column;
   gap: 16px;
+
+  @media screen and (max-width: 1023px) {
+    gap: 8px;
+    padding: 16px 16px 24px 16px;
+    width: 100%;
+    .order__details-title {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 28px;
+      letter-spacing: -0.2px;
+    }
+
+    .order__details-delivery-item {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .order__delivery-info {
+      margin-top: 12px;
+    }
+
+    .order__details-delivery-text {
+      margin-top: 8px;
+    }
+
+    .order__basket-details-offer {
+      margin: 0;
+    }
+
+    &.user-form {
+      .order__basket-details-person {
+        .order__basket-person-grid {
+          gap: 16px;
+          grid-template-columns: auto;
+        }
+
+        .line-label {
+          min-height: 13px;
+        }
+
+        .line-error {
+          min-height: 16px;
+        }
+
+        .order__basket-person-grid-line {
+          min-height: 56px;
+        }
+      }
+    }
+  }
 }
