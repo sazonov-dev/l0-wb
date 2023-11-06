@@ -129,6 +129,10 @@
 
       .order__basket-total-settings {
         visibility: hidden;
+
+        @media screen and (max-width: 1023px){
+          visibility: visible;
+        }
       }
 
       &:hover {
