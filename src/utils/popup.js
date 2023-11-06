@@ -27,10 +27,16 @@ const closeModalByIcon = (modal) => {
     closeButton.addEventListener('click', () => {
         modal.classList.remove('active')
         overlay.classList.remove('active');
+        if (body.offsetWidth < 1023) {
+            navMobile.style.display = 'flex'
+        }
     });
     selectButton.addEventListener('click', () => {
         modal.classList.remove('active')
         overlay.classList.remove('active');
+        if (body.offsetWidth < 1023) {
+            navMobile.style.display = 'flex'
+        }
     })
 }
 
@@ -38,11 +44,17 @@ const closeModalByEsc = (modal) => {
     overlay.addEventListener('click', (evt) => {
         overlay.classList.remove('active');
         modal.classList.remove('active')
+        if (body.offsetWidth < 1023) {
+            navMobile.style.display = 'flex'
+        }
     });
     document.addEventListener('keydown', (evt) => {
         if (evt.key === 'Escape') {
             modal.classList.remove('active')
             overlay.classList.remove('active')
+            if (body.offsetWidth < 1023) {
+                navMobile.style.display = 'flex'
+            }
         }
     })
 }
