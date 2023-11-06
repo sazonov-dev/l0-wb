@@ -1,21 +1,37 @@
 import {getLocalStorageData} from "./localStorage";
 
 const toggleVisibility = (element, button) => {
-    const mainContainer = element.closest('.order__basket-content');
-    const text = mainContainer.querySelector('.order__basket-selectAll');
     const data = JSON.parse(getLocalStorageData('initBasket'));
-    console.log(mainContainer, text, data)
+
 
     if (element.classList.contains('hidden')) {
         element.classList.remove('hidden');
         button.classList.remove('active')
-        text.innerText = `Выбрать все`
-        text.style.fontWeight = '400';
+        if (element.closest('#settings')) {
+            const mainContainer = element.closest('.order__basket-content');
+            const text = mainContainer.querySelector('.order__basket-selectAll');
+            const checkbox = mainContainer.querySelector('.order__basket-checkbox');
+
+            checkbox.style.display = 'block'
+            text.innerText = `Выбрать все`
+            text.style.fontWeight = '400';
+            text.style.marginLeft = '11px';
+            text.style.marginRight = 'auto'
+        }
     } else {
         element.classList.add('hidden');
         button.classList.add('active')
-        text.innerText = `${data.totalCount} товаров · ${data.totalPrice.toLocaleString()} сом`
-        text.style.fontWeight = '700';
+
+        if (element.closest('#settings')) {
+            const mainContainer = element.closest('.order__basket-content');
+            const text = mainContainer.querySelector('.order__basket-selectAll');
+            const checkbox = mainContainer.querySelector('.order__basket-checkbox');
+
+            checkbox.style.display = 'none'
+            text.innerText = `${data.totalCount} товаров · ${data.totalPrice.toLocaleString()} сом`
+            text.style.fontWeight = '700';
+            text.style.margin = '0'
+        }
     }
 }
 

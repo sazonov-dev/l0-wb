@@ -5,8 +5,4 @@
   @include flex-center;
   align-items: flex-start;
   width: 100%;
-  .warning--gray {
-    padding-bottom: 1px;
-    border-bottom: 1px dashed $system-gray;
-  }
 }
