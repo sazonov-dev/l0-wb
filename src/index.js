@@ -9,13 +9,13 @@ import {startBasket} from "./utils/basket";
 
 const startApp = () => {
     initLocalStorage();
-    // interactiveStorageData();
-    startBasket();
+    interactiveStorageData();
     inputValidateStart();
     deleteItemsHandler();
     mouseOverModalHandler();
     visibilityHandler();
     startPopup();
+    startBasket();
 }
 
-startApp()
+await startApp()

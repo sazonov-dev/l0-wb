@@ -1,10 +1,21 @@
+import {getLocalStorageData} from "./localStorage";
+
 const toggleVisibility = (element, button) => {
+    const mainContainer = element.closest('.order__basket-content');
+    const text = mainContainer.querySelector('.order__basket-selectAll');
+    const data = JSON.parse(getLocalStorageData('initBasket'));
+    console.log(mainContainer, text, data)
+
     if (element.classList.contains('hidden')) {
         element.classList.remove('hidden');
         button.classList.remove('active')
+        text.innerText = `Выбрать все`
+        text.style.fontWeight = '400';
     } else {
         element.classList.add('hidden');
         button.classList.add('active')
+        text.innerText = `${data.totalCount} товаров · ${data.totalPrice.toLocaleString()} сом`
+        text.style.fontWeight = '700';
     }
 }
 

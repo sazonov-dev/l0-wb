@@ -1,5 +1,5 @@
-import { getItemAttributes } from "./utils";
-import { priceBasketChanger } from "./basketChanger";
+import {getLocalStorageData, setLocalStorageData} from "./localStorage";
+
 const inputToValidate = document.querySelectorAll('.line-input');
 
 const inputErrorStyle = (input, error) => {
@@ -32,38 +32,47 @@ const inputValidateHandler = (event) => {
     const target = event.target;
     const id = target.id;
     const value = target.value;
+    const formData = JSON.parse(getLocalStorageData('initForm'));
 
     switch (id) {
         case "name":
             if (!inputNameValidate(value)) {
                 return inputErrorStyle(target, "Имя введено не корректно")
             }
+            formData.name = value;
+            setLocalStorageData("initForm", formData);
             return inputDefaultStyle(target);
         case "surname":
             if (!inputNameValidate(value)) {
                 return inputErrorStyle(target, "Имя введено не корректно")
             }
+            formData.surname = value;
+            setLocalStorageData("initForm", formData);
             return inputDefaultStyle(target);
         case "phone":
             const data = inputPhoneValidate(value);
             if (!data) {
                 return inputErrorStyle(target, "Не верный номер")
             }
-
             if (typeof data === 'string') {
+                formData.phone = data;
+                setLocalStorageData("initForm", formData);
                 return inputDefaultStyle(target, data);
             }
-
             return inputDefaultStyle(target);
         case "email":
             if (!inputEmailValidate(value)) {
                 return inputErrorStyle(target, "Не верный формат почты")
             }
+            formData.email = value;
+            setLocalStorageData("initForm", formData);
             return inputDefaultStyle(target);
         case "inn":
             if (!inputInnValidate(value)) {
                 return inputErrorStyle(target, "ИНН минимум 14 цифр")
             }
+            formData.inn = value;
+            setLocalStorageData("initForm", formData);
             return inputDefaultStyle(target, null, "Для томоженного оформления");
         default:
             console.log('Не известный ID, inputValidateHandler');

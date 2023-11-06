@@ -1,38 +1,9 @@
-import {setLocalStorageData} from "./localStorage";
+import {getLocalStorageData, setLocalStorageData} from "./localStorage";
 
 const buttons = document.querySelectorAll('.order__basket-item-btn');
 const checkboxes = document.querySelectorAll('.order__basket-checkbox-input');
 
-export const initBasket = {
-    totalPrice: 0,
-    totalCount: 0,
-    totalDiscount: 0,
-    currency: 'сом',
-    items: {
-        tShirt: {
-            price: 250,
-            discountPercent: 55,
-            count: 0,
-            maxCount: 2,
-            status: false
-        },
-        cardHolder: {
-            price: 10500,
-            discountPercent: 55,
-            count: 0,
-            maxCount: 999,
-            status: false
-        },
-        pencil: {
-            price: 300,
-            discountPercent: 55,
-            count: 0,
-            maxCount: 2,
-            status: false
-        },
-
-    }
-}
+let initBasket = null;
 
 const changeBasketState = (key, value, payload) => {
     switch (payload.type) {
@@ -121,14 +92,14 @@ const buttonHandler = (event) => {
             changeBasketHandler("INCREMENT_TOTAL_COUNT", {key: 'totalCount', data: 1, itemKey: key});
             orderInfoHandler();
             priceInfoHandler(target, key);
-            setLocalStorageData(initBasket);
+            setLocalStorageData("initBasket", initBasket);
             return inputValueHandler(target, key);
         case "decrement":
             changeBasketHandler("DECREMENT_COUNT", {key, data: 1})
             changeBasketHandler("DECREMENT_TOTAL_COUNT", {key: 'totalCount', data: 1});
             orderInfoHandler();
             priceInfoHandler(target, key);
-            setLocalStorageData(initBasket);
+            setLocalStorageData("initBasket", initBasket);
             return inputValueHandler(target, key);
     }
 }
@@ -199,9 +170,12 @@ const orderInfoHandler = () => {
         totalPriceWithDiscount.innerText = `${((totalInfo.totalPrice / 100 * 55) + totalInfo.totalPrice).toLocaleString()} ${currency}`
         totalDiscount.innerText = `−${(totalInfo.totalPrice / 100 * 55).toLocaleString()} ${currency}`
         basketCount.forEach((basket) => basket.innerText = `${totalInfo.totalCount}`)
+        initBasket.totalCount = totalInfo.totalCount;
+        initBasket.totalPrice = totalInfo.totalPrice;
+        initBasket.totalDiscount = (totalInfo.totalPrice / 100 * 55);
     }
 
-    setLocalStorageData(initBasket);
+    setLocalStorageData("initBasket", initBasket);
 }
 
 const checkboxHandler = (event) => {
@@ -258,6 +232,7 @@ const checkboxesSetState = (state) => {
 }
 
 export const startBasket = () => {
+    initBasket = JSON.parse(getLocalStorageData('initBasket'));
     buttons.forEach((button) => button.addEventListener('click', buttonHandler));
     checkboxes.forEach((checkbox) => checkbox.addEventListener('click', checkboxHandler));
 }
