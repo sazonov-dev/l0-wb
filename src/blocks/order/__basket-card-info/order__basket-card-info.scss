@@ -1,7 +1,0 @@
-@use 'mixins' as *;
-
-.order__basket-card-info {
-  @include flex-start-column;
-  flex: 1;
-  gap: 8px;
-}

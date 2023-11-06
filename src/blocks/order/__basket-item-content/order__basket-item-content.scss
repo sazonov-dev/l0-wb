@@ -1,9 +1,0 @@
-@use 'mixins' as *;
-
-.order__basket-item-content {
-  @include flex-center;
-  margin-bottom: auto;
-  @media screen and (min-width: 320px) and (max-width: 1023px) {
-    position: relative;
-  }
-}
