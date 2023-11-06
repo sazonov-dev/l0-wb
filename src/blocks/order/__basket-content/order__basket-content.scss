@@ -118,6 +118,16 @@
           background: linear-gradient(0deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 100%), url('../../../images/order/basket/basket-item-1.png'), lightgray 50% / cover no-repeat;
         }
       }
+
+      .order__basket-total-settings {
+        display: none;
+      }
+
+      &:hover {
+        .order__basket-total-settings {
+          display: flex;
+        }
+      }
     }
 
     @media screen and (max-width: 1023px) {

@@ -2,7 +2,7 @@ import {getLocalStorageData, setLocalStorageData} from "./localStorage";
 
 const inputToValidate = document.querySelectorAll('.line-input');
 
-const inputErrorStyle = (input, error) => {
+export const inputErrorStyle = (input, error) => {
     const mainContainer = input.closest('.order__basket-person-grid-line');
     const spanError = mainContainer.querySelector('.line-error');
     spanError.style.color = '#F55123';
@@ -28,55 +28,60 @@ const inputDefaultStyle = (input, value = null, span = null) => {
     }
 }
 
-const inputValidateHandler = (event) => {
-    const target = event.target;
-    const id = target.id;
-    const value = target.value;
+export const inputValidate = (input) => {
+    const id = input.id;
+    const value = input.value;
     const formData = JSON.parse(getLocalStorageData('initForm'));
 
     switch (id) {
         case "name":
             if (!inputNameValidate(value)) {
-                return inputErrorStyle(target, "Имя введено не корректно")
+                return inputErrorStyle(input, "Имя введено не корректно")
             }
             formData.name = value;
             setLocalStorageData("initForm", formData);
-            return inputDefaultStyle(target);
+            return inputDefaultStyle(input);
         case "surname":
             if (!inputNameValidate(value)) {
-                return inputErrorStyle(target, "Имя введено не корректно")
+                return inputErrorStyle(input, "Имя введено не корректно")
             }
             formData.surname = value;
             setLocalStorageData("initForm", formData);
-            return inputDefaultStyle(target);
+            return inputDefaultStyle(input);
         case "phone":
             const data = inputPhoneValidate(value);
             if (!data) {
-                return inputErrorStyle(target, "Не верный номер")
+                return inputErrorStyle(input, "Не верный номер")
             }
             if (typeof data === 'string') {
                 formData.phone = data;
                 setLocalStorageData("initForm", formData);
-                return inputDefaultStyle(target, data);
+                return inputDefaultStyle(input, data);
             }
-            return inputDefaultStyle(target);
+            return inputDefaultStyle(input);
         case "email":
             if (!inputEmailValidate(value)) {
-                return inputErrorStyle(target, "Не верный формат почты")
+                return inputErrorStyle(input, "Не верный формат почты")
             }
             formData.email = value;
             setLocalStorageData("initForm", formData);
-            return inputDefaultStyle(target);
+            return inputDefaultStyle(input);
         case "inn":
             if (!inputInnValidate(value)) {
-                return inputErrorStyle(target, "ИНН минимум 14 цифр")
+                return inputErrorStyle(input, "ИНН минимум 14 цифр")
             }
             formData.inn = value;
             setLocalStorageData("initForm", formData);
-            return inputDefaultStyle(target, null, "Для томоженного оформления");
+            return inputDefaultStyle(input, null, "Для томоженного оформления");
         default:
             console.log('Не известный ID, inputValidateHandler');
     }
+}
+
+export const inputValidateHandler = (event) => {
+    const target = event.target;
+
+    inputValidate(target);
 }
 
 const inputNameValidate = (value) => {

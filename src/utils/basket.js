@@ -1,7 +1,9 @@
 import {getLocalStorageData, setLocalStorageData} from "./localStorage";
+import {inputErrorStyle, inputValidate, inputValidateHandler} from "./inputValidator";
 
 const buttons = document.querySelectorAll('.order__basket-item-btn');
 const checkboxes = document.querySelectorAll('.order__basket-checkbox-input');
+const button = document.querySelector('.order__info-delivery-btn');
 
 let initBasket = null;
 
@@ -126,6 +128,15 @@ const priceInfoHandler = (target, key) => {
 
 }
 
+const filteredItemsFunc = (items) => {
+    return Object.keys(items)
+        .filter(item => items[item].status)
+        .reduce((filtered, item) => {
+            filtered[item] = items[item];
+            return filtered;
+        }, {});
+}
+
 const orderInfoHandler = () => {
     const order = document.querySelector('.order__info');
     const totalPrice = order.querySelector('.order__info-total-price');
@@ -135,12 +146,7 @@ const orderInfoHandler = () => {
     const basketCount = document.querySelectorAll('.basket__counter');
     const currency = initBasket.currency;
 
-    const filteredItems = Object.keys(initBasket.items)
-        .filter(item => initBasket.items[item].status)
-        .reduce((filtered, item) => {
-            filtered[item] = initBasket.items[item];
-            return filtered;
-        }, {});
+    const filteredItems = filteredItemsFunc(initBasket.items);
 
     const totalInfo = Object.keys(filteredItems).reduce((filtered, item) => {
         if (!filtered.totalPrice) {
@@ -178,6 +184,43 @@ const orderInfoHandler = () => {
     setLocalStorageData("initBasket", initBasket);
 }
 
+const checkEmptyInputs = () => {
+    const inputs = Array.from(document.querySelectorAll('.line-input'));
+
+    const emptyInputs = inputs.map((input) => {
+        if (input.value.length === 0) {
+            return input
+        }
+    }).filter((item) => item !== undefined);
+
+
+    if (emptyInputs.length !== 0) {
+        emptyInputs.forEach((input) => {
+            inputErrorStyle(input, 'Пустое поле')
+        })
+
+        return true;
+    }
+
+    return false;
+}
+
+const paymentNowButtonHandler = () => {
+    const checkedItems = filteredItemsFunc(initBasket.items);
+    let totalPrice = 0;
+
+    if (isEmptyObject(checkedItems)) {
+        button.innerText = 'Заказать'
+        return null;
+    } else {
+        for (let key in checkedItems) {
+            totalPrice = (checkedItems[key].count * checkedItems[key].price) + totalPrice;
+        }
+
+        button.innerText = `Оплатить ${totalPrice.toLocaleString()} сом`
+    }
+}
+
 const checkboxHandler = (event) => {
     const target = event.target;
     const keys = ['tShirt', 'cardHolder', 'pencil'];
@@ -189,12 +232,23 @@ const checkboxHandler = (event) => {
         checkboxesSetState(true);
         return orderInfoHandler();
     }
+
     if (target.id === 'basketAllCheckbox' && !target.checked) {
         keys.forEach((key) => {
             changeBasketHandler("CHANGE_ITEM_STATUS", {key, data: false})
         })
         checkboxesSetState(false);
         return orderInfoHandler();
+    }
+
+    if (target.id === 'delivery-checkbox' && target.checked) {
+        paymentNowButtonHandler()
+        return null
+    }
+
+    if (target.id === 'delivery-checkbox' && !target.checked) {
+        paymentNowButtonHandler()
+        return null
     }
 
     const key = target.closest('.order-grid').dataset.key;
@@ -235,6 +289,7 @@ export const startBasket = () => {
     initBasket = JSON.parse(getLocalStorageData('initBasket'));
     buttons.forEach((button) => button.addEventListener('click', buttonHandler));
     checkboxes.forEach((checkbox) => checkbox.addEventListener('click', checkboxHandler));
+    button.addEventListener('click', checkEmptyInputs)
 }
 
 

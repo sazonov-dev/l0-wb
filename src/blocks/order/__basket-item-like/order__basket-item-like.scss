@@ -6,4 +6,8 @@
   background-image: url('../../../images/order/basket/like-icon.svg');
   background-size: cover;
   background-repeat: no-repeat;
+
+  &:hover {
+    background-image: url('../../../images/order/basket/like-icon-filled.svg');
+  }
 }
