@@ -8,5 +8,15 @@
     @include flex-start;
     flex-direction: row;
     gap: 8px;
+    @media screen and (max-width: 1023px) {
+      margin-top: 12px;
+      &:last-of-type {
+        margin-bottom: 8px;
+      }
+
+      .order__delivery-info-content {
+        min-width: 288px;
+      }
+    }
   }
 }

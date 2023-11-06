@@ -3,7 +3,7 @@
 .order__basket-details {
   width: 100%;
   @include flex-start-column;
-  gap: 16px;
+  gap: 14px;
   padding: 0;
 
   @media screen and (max-width: 1023px) {

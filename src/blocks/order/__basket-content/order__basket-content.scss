@@ -26,6 +26,10 @@
     padding-top: 11px;
     @include flex-between;
 
+    @media screen and (max-width: 1023px) {
+      padding-top: 10px;
+    }
+
     .order-grid__content-size {
       display: none;
     }
@@ -120,12 +124,12 @@
       }
 
       .order__basket-total-settings {
-        display: none;
+        visibility: hidden;
       }
 
       &:hover {
         .order__basket-total-settings {
-          display: flex;
+          visibility: visible;
         }
       }
     }
@@ -134,6 +138,10 @@
       @include flex-start-column;
       gap: 12px;
       border-top: 1px solid rgba(0, 0, 0, 0.10);
+
+      .order-basket__container {
+        gap: 16px;
+      }
 
       .info-icon {
         display: none;

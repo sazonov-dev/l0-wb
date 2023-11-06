@@ -28,10 +28,24 @@
 
     .order__delivery-info {
       margin-top: 12px;
+
+      @media screen and (max-width: 1023px) {
+        margin: 0;
+      }
     }
 
     .order__details-delivery-text {
       margin-top: 8px;
+      @media screen and (max-width: 1023px) {
+        margin: 0;
+        max-width: 272px;
+
+        .order__details-delivery-text-container {
+          min-width: 32px;
+          height: 32px;
+          @include flex-center;
+        }
+      }
     }
 
     .order__basket-details-offer {
@@ -40,6 +54,13 @@
 
     &.user-form {
       .order__basket-details-person {
+        @media screen and (max-width: 1023px) {
+          gap: 16px;
+
+          .order__basket-person-grid-line {
+            max-height: 56px;
+          }
+        }
         .order__basket-person-grid {
           gap: 16px;
           grid-template-columns: auto;
