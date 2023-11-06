@@ -11,4 +11,11 @@
   padding: 7.5px 48px 12.5px;
   border-radius: 8px;
   letter-spacing: 0.514px;
+
+  @media screen and (max-width: 1023px) {
+    text-align: center;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: auto;
+  }
 }

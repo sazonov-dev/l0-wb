@@ -18,4 +18,4 @@ const startApp = () => {
     startBasket();
 }
 
-await startApp()
+startApp()

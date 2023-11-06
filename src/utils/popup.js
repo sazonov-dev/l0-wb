@@ -4,6 +4,7 @@ const popupDelivery = document.querySelector('#popup__delivery');
 const popupPayment = document.querySelector('#popup__payment');
 const deliveryButtons = document.querySelectorAll('#delivery-popup-btn');
 const paymentButtons = document.querySelectorAll('#payment-popup-btn');
+const navMobile = body.querySelector('.nav-mobile');
 
 const modalHandler = (modal) => {
     openModal(modal);
@@ -14,6 +15,10 @@ const modalHandler = (modal) => {
 const openModal = (modal) => {
     modal.classList.add('active');
     overlay.classList.add('active');
+
+    if (body.offsetWidth < 1023) {
+        navMobile.style.display = 'none'
+    }
 }
 
 const closeModalByIcon = (modal) => {
